@@ -1,4 +1,5 @@
+<h2 *ngIf="selectedItem >0 ">Users <span class="highlight">{{selectedItem}}</span> selected out of <span id="totalLength">{{dataSource.length}}</span>
+</h2>
 
-<h2 *ngIf="selectedItem >0 ">Users <span class="highlight">{{selectedItem}}</span> selected out of {{dataSource.length}}</h2>
-
-<app-table-component [dataSourceInput]="dataSource" [roles]="roles" (emitNumberOfItemsSelected)="onSelectionOfItem($event)"></app-table-component>
+<app-table-component [dataSourceInput]="dataSource" [roles]="roles"
+    (emitNumberOfItemsSelected)="onSelectionOfItem($event)"></app-table-component>
