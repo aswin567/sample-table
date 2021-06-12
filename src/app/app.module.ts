@@ -8,9 +8,11 @@ import { ResizableModule } from 'angular-resizable-element';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
+import { TableComponentComponent } from './table-component/table-component.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TableComponentComponent
   ],
   imports: [
     BrowserModule,
