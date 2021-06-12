@@ -1,3 +1,15 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+  }
+
+h2{
+    color: #777;
+    .highlight{
+        color: #19b5f1;
+    }
+}
 table {
   width: 100%;
   text-align: center !important;
@@ -14,3 +26,45 @@ mwlResizable {
 tr:focus {
   outline: none;
 }
+
+th.mat-header-cell {
+    text-align: left;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+th.mat-header-cell,td.mat-cell{
+    &:first-of-type{
+        padding: 7px 14px;
+    }
+}
+
+.action-items-container{
+    fa-icon{
+        margin: 7px;
+    }
+}
+
+.role-elements{
+    display: inline-block;
+    margin: 2px;
+    padding: 4px 7px;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+.admin-role{
+    background: rgb(153 42 222 / 20%);
+    color: rgb(153 42 222);
+}
+
+.editor-role{
+    background: rgb(5 90 27 / 20%);
+    color: rgb(5 90 27);
+}
+
+.viewer-role{
+    background: rgb(29 127 228 / 20%);
+    color: rgb(29 127 228);
+}
+

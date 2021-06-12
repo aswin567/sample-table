@@ -29,3 +29,16 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 tr.mat-row:nth-child(2n){
     background: #f5f5f5;
 }
+
+.mat-table{
+    box-shadow: none;
+}
+
+//Checkbox
+
+.mat-checkbox-background{
+    background: transparent !important;
+}
+.mat-checkbox-checkmark-path{
+    stroke: #4e4d4d !important;
+}
