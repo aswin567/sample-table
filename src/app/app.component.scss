@@ -1,0 +1,16 @@
+table {
+  width: 100%;
+  text-align: center !important;
+}
+
+mwlResizable {
+  box-sizing: border-box;
+}
+
+.highlight {
+  background: rgba(255, 252, 146, 0.12) !important;
+}
+
+tr:focus {
+  outline: none;
+}
