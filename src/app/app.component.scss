@@ -1,3 +1,5 @@
+@import './../assets/styles/color.scss';
+
 :host {
     display: flex;
     flex-direction: column;
@@ -13,14 +15,6 @@ h2{
 table {
   width: 100%;
   text-align: center !important;
-}
-
-mwlResizable {
-  box-sizing: border-box;
-}
-
-.highlight {
-  background: rgba(255, 252, 146, 0.12) !important;
 }
 
 tr:focus {
@@ -54,17 +48,17 @@ th.mat-header-cell,td.mat-cell{
 }
 
 .admin-role{
-    background: rgb(153 42 222 / 20%);
-    color: rgb(153 42 222);
+    background: lighten($adminColor, 40%);
+    color: $adminColor;
 }
 
 .editor-role{
-    background: rgb(5 90 27 / 20%);
-    color: rgb(5 90 27);
+    background: lighten($editorColor, 60%);
+    color: $editorColor;
 }
 
 .viewer-role{
-    background: rgb(29 127 228 / 20%);
-    color: rgb(29 127 228);
+    background: lighten($viewerColor, 40%);
+    color: $viewerColor;
 }
 

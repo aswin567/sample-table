@@ -73,44 +73,4 @@ export class AppComponent implements AfterViewInit {
     }
   }
 
-  highlight(row: any) {
-    this.selectedRowIndex = row.id;
-  }
-
-  arrowUpEvent(row: object, index: number) {
-    const incIndex = index - 2;
-    var nextrow = this.dataSource.filteredData[incIndex];
-    if (this.dataSource.filteredData.length - 1 >= index) {
-
-      this.highlight(nextrow);
-    }
-  }
-
-  arrowDownEvent(row: object, index: number) {
-    var nextrow = this.dataSource.filteredData[index];
-    if (this.dataSource.filteredData.length - 1 >= index) {
-
-      this.highlight(nextrow);
-    }
-  }
-
-  keyPress(event: KeyboardEvent, row: object, index: number) {
-    switch (event.keyCode) {
-      case 40: // down arrow
-        this.arrowDownEvent(row, index);
-        break;
-
-      case 38: // up arrow
-        this.arrowUpEvent(row, index);
-        break;
-
-      case 39:
-        this.arrowDownEvent(row, index);
-        break;
-
-      case 37:
-        this.arrowDownEvent(row, index);
-        break;
-    }
-  }
 }
