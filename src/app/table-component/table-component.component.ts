@@ -46,7 +46,6 @@ export class TableComponentComponent implements AfterViewInit, OnChanges {
     }
   }
 
-  /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected(): boolean {
     const numSelected = this.selection.selected.length;
     const numRows = this.dataSource.data.length;
@@ -55,7 +54,6 @@ export class TableComponentComponent implements AfterViewInit, OnChanges {
     return numSelected === numRows;
   }
 
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
   masterToggle(): void {
     if (this.isAllSelected()) {
       this.selection.clear();
@@ -66,7 +64,6 @@ export class TableComponentComponent implements AfterViewInit, OnChanges {
     this.selection.select(...this.dataSource.data);
   }
 
-  /** The label for the checkbox on the passed row */
   checkboxLabel(row?: TableContent): string {
     if (!row) {
       const labelForAllSelection = `${this.isAllSelected() ? 'deselect' : 'select'} all`;

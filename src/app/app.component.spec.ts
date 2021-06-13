@@ -97,13 +97,13 @@ describe('AppComponent', () => {
   });
 
   it('should triger onSelectionOfItem when table emit event', () => {
-    const testValue = 20
-    spyOn(fixture.componentInstance, 'onSelectionOfItem')
-    
+    const testValue = 20;
+    spyOn(fixture.componentInstance, 'onSelectionOfItem');
+
     fixture.detectChanges();
     const tableComponentDes = fixture.debugElement.query(By.directive(TableComponentComponent));
     tableComponentDes.componentInstance.emitLengthValue(testValue);
 
     expect(fixture.componentInstance.onSelectionOfItem).toHaveBeenCalledWith(testValue);
-  })
+  });
 });
