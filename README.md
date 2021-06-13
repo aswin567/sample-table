@@ -12,7 +12,7 @@ Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app 
 
 ## Build
 
-Run `npm build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `npm run prodBuild` for a production build, this will internal run unit test and also lint check up.
+Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `npm run prodBuild` for a production build, this will internal run unit test and also lint check up.
 
 ## Running unit tests
 
