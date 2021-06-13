@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Input, NO_ERRORS_SCHEMA, Output, ViewChild } from '@angular/core';
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { MatSort } from '@angular/material/sort';
+import { By } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ELEMENT_DATA } from './data.const';
 import { Roles } from './roles.enum';
+import { TableComponentComponent } from './table-component/table-component.component';
 import { TableContent } from './table-content';
 
 describe('AppComponent', () => {
@@ -26,7 +28,7 @@ describe('AppComponent', () => {
 
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent, FakeTableComponent
+        AppComponent, TableComponentComponent
       ]
     });
 
@@ -93,4 +95,15 @@ describe('AppComponent', () => {
 
     expect(textinTemplate).toBe(`Users ${selectedValue} selected out of ${ELEMENT_DATA.length}`);
   });
+
+  it('should triger onSelectionOfItem when table emit event', () => {
+    const testValue = 20
+    spyOn(fixture.componentInstance, 'onSelectionOfItem')
+    
+    fixture.detectChanges();
+    const tableComponentDes = fixture.debugElement.query(By.directive(TableComponentComponent));
+    tableComponentDes.componentInstance.emitLengthValue(testValue);
+
+    expect(fixture.componentInstance.onSelectionOfItem).toHaveBeenCalledWith(testValue);
+  })
 });
