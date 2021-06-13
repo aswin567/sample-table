@@ -45,26 +45,26 @@ describe('TableComponentComponent', () => {
 
     expect(resultValue).toBeFalse();
 
-  })
+  });
 
   it('should give proper value for displayColoum', () => {
 
     const result = fixture.componentInstance.displayColoum(ELEMENT_DATA);
-    const expectedResult = ["select", "id", "name", "email", "roles", "action"];
-    
+    const expectedResult = ['select', 'id', 'name', 'email', 'roles', 'action'];
+
     expect(result).toEqual(expectedResult);
 
-  })
+  });
 
   it('should give proper value for checkboxLabel', () => {
 
     const result = fixture.componentInstance.checkboxLabel(ELEMENT_DATA[0]);
-    //fixture.detectChanges();
+    // fixture.detectChanges();
     const labelForAllSelection = 'select row 2';
 
-    
+
     expect(result).toEqual(labelForAllSelection);
 
-  })
+  });
 
 });

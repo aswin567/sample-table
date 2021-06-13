@@ -5,9 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "preprodBuild":"npm run testForBuild && npm run lint",
+    "prodBuild": "ng build --prod",
     "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "testForBuild": "ng test --watch=false",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {

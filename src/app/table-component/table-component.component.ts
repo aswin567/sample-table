@@ -16,7 +16,7 @@ export class TableComponentComponent implements AfterViewInit, OnChanges {
 
   @ViewChild(MatSort) sort: MatSort;
   @Input() roles: Roles;
-  @Input() dataSourceInput: Array<TableContent>
+  @Input() dataSourceInput: Array<TableContent>;
   @Output() emitNumberOfItemsSelected: EventEmitter<number> = new EventEmitter<number>();
 
   dataSource: MatTableDataSource<TableContent>;
@@ -32,15 +32,15 @@ export class TableComponentComponent implements AfterViewInit, OnChanges {
   }
 
   ngOnChanges(simpleChange: SimpleChanges): void{
-    const dataSourceInputChange = simpleChange['dataSourceInput'];
-    const selectionChange = simpleChange['selection'];
-    if(dataSourceInputChange){
+    const dataSourceInputChange = simpleChange.dataSourceInput;
+    const selectionChange = simpleChange.selection;
+    if (dataSourceInputChange){
 
       this.dataSource = new MatTableDataSource<TableContent>(this.dataSourceInput);
       this.displayedColumns = this.displayColoum(this.dataSourceInput);
     }
 
-    if(selectionChange){
+    if (selectionChange){
       const selectionCurrentValue = selectionChange.currentValue;
       this.emitNumberOfItemsSelected.emit(selectionCurrentValue);
     }
@@ -82,6 +82,7 @@ export class TableComponentComponent implements AfterViewInit, OnChanges {
     if (event.edges.right) {
       const cssValue = `${event.rectangle.width}px`;
       const columnElts = document.getElementsByClassName(`mat-column-${columnName}`);
+      // tslint:disable-next-line
       for (let i = 0; i < columnElts.length; i++) {
         const currentEl = columnElts[i] as HTMLDivElement;
         currentEl.style.width = cssValue;
@@ -94,12 +95,12 @@ export class TableComponentComponent implements AfterViewInit, OnChanges {
     const keys = Object.keys(tableItem);
     keys.unshift('select');
     keys.push('action');
-    
-    return keys
+
+    return keys;
 
   }
 
-  emitLengthValue(value:number): void{
+  emitLengthValue(value: number): void{
     this.emitNumberOfItemsSelected.emit(value);
   }
 
